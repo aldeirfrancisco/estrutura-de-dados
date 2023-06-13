@@ -1,5 +1,7 @@
 package estrutura_aula3_lista_ligada;
 
+import java.util.Iterator;
+
 public class ListaLigada {
 	
     private Elemento primeiro;
@@ -52,7 +54,13 @@ public class ListaLigada {
 	}
     
     public Elemento get(int posicao) {
-		return null;
+    	Elemento atual = this.primeiro;
+    	for(int i = 0; i < posicao; i++) {
+    		if(atual.getProximo() != null) {
+    			atual = atual.getProximo();
+    		}
+    	}
+		return atual;
 	}
 	
 }

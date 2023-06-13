@@ -10,6 +10,7 @@ public class Programa {
 		    System.out.println("Tamanho "+lista.getTamanho() );
 		    System.out.println("Primeiro "+lista.getPrimeiro().getValor() );
 		    System.out.println("Último "+lista.getUltimo().getValor() );
+		    System.out.println("Atual "+lista.get(2).getValor() );
 	}
   
 }

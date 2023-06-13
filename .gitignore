@@ -2,3 +2,8 @@
 .classpath
 .project
 .settings/
+bin/estrutura_aula3_lista_ligada
+bin
+.class
+*.class
+*.class
