@@ -2,10 +2,10 @@ package estrutura_aula3_lista_ligada;
 
 import java.util.Iterator;
 
-// parei na aula 4
+// parei na aula 6
 public class Programa {
 	public static void main(String[] args) {
-		 ListaLigada lista = new ListaLigada();
+		 ListaLigada<String> lista = new ListaLigada<String>();
 		    lista.adicionar("AC");
 		    lista.adicionar("BA");
 		    lista.adicionar("CE");
@@ -20,9 +20,9 @@ public class Programa {
 		    }
 		    System.out.println("Removendo valores da lista");
 		    lista.remover("CE");
-		    lista.remover("BA");
-		    lista.remover("AC");
-		    lista.remover("DF");
+			/*
+			 * lista.remover("BA"); lista.remover("AC"); lista.remover("DF");
+			 */
 		    
 		    System.out.println("Removeu estado CE");
 		    for(int i = 0; i < lista.getTamanho(); i++) {

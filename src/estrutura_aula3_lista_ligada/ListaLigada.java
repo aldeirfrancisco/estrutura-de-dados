@@ -1,30 +1,28 @@
 package estrutura_aula3_lista_ligada;
 
-import java.util.Iterator;
-
-public class ListaLigada {
+public class ListaLigada<TIPO> {
 	
-    private Elemento primeiro;
-	private Elemento ultimo;
+    private Elemento<TIPO> primeiro;
+	private Elemento<TIPO> ultimo;
 	private int tamanho;
 	
 	public ListaLigada() {
 		this.tamanho = 0;
 	}
 	
-	public Elemento getPrimeiro() {
+	public Elemento<TIPO> getPrimeiro() {
 		return primeiro;
 	}
 	
-	public void setPrimeiro(Elemento primeiro) {
+	public void setPrimeiro(Elemento<TIPO> primeiro) {
 		this.primeiro = primeiro;
 	}
 	
-	public Elemento getUltimo() {
+	public Elemento<TIPO> getUltimo() {
 		return ultimo;
 	}
 	
-	public void setUltimo(Elemento ultimo) {
+	public void setUltimo(Elemento<TIPO> ultimo) {
 		this.ultimo = ultimo;
 	}
 	
@@ -36,8 +34,8 @@ public class ListaLigada {
 		this.tamanho = tamanho;
 	}
 	
-	public void adicionar(String novoValor) {
-		Elemento novoElemento = new Elemento(novoValor);
+	public void adicionar(TIPO novoValor) {
+		Elemento<TIPO> novoElemento = new Elemento<TIPO>(novoValor);
 		if(this.primeiro == null && this.ultimo == null) {
 			this.primeiro = novoElemento;
 			this.ultimo = novoElemento;
@@ -49,11 +47,11 @@ public class ListaLigada {
 		this.tamanho++;
 	}
 	
-    public void remover(String valorProcurado) {
-    	Elemento anterior = null;
-    	Elemento atual = this.primeiro;
+    public void remover(TIPO valorProcurado) {
+    	Elemento<TIPO> anterior = null;
+    	Elemento<TIPO> atual = this.primeiro;
     	for(int i = 0; i < this.getTamanho(); i++) {
-    		if(atual.getValor().equalsIgnoreCase(valorProcurado)) {
+    		if(atual.getValor().equals(valorProcurado)) {
     			if(this.tamanho == 1) {
     				this.primeiro = null;
     				this.ultimo = null;
@@ -77,7 +75,7 @@ public class ListaLigada {
     	
 	}
     
-    public Elemento get(int posicao) {
+    public Elemento<TIPO> get(int posicao) {
     	Elemento atual = this.primeiro;
     	for(int i = 0; i < posicao; i++) {
     		if(atual.getProximo() != null) {
