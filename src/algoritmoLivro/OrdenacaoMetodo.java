@@ -4,38 +4,40 @@ public class OrdenacaoMetodo {
    
 	public static int[] ordenacaoPorSelecao(int[] array) {
 		int[] novoArray = new int[array.length];
-		int a = 1;
-		int[] novoAr = array;
-		 int indiceRemover = 0;
+	
 		for(int i= 0; i < array.length; i++) {
+			int index = buscarIndexMenorNumero(array,i);
+			trocarElementos(array, i, index);
 			
-			int[] novoArr = new int[novoArray.length -a ];
-			int index = buscarMenor(array);
-			novoArray[i]= array[index];
-			indiceRemover = index;
-		
-			 for (int j = 0; j < indiceRemover; j++) {
-		            novoArr[j] = array[j];
-		        }
-			 for (int d = indiceRemover + 1; d < array.length; d++) {
-		            novoArr[d - 1] = array[d];
-		        }
-			 a = 0;
-       		array = novoArr;
 		}
-		
-		return novoArray;
+		for (int i = 0; i < array.length - 1; i++) {
+            int indiceMenor = i;
+
+            indiceMenor = buscarIndexMenorNumero(array,i);
+ 
+            if (indiceMenor != i) {
+                trocarElementos(array, i, indiceMenor);
+            }
+        }
+		return array;
 	}
-	private static int buscarMenor(int[] array) {
-		  int menor = array[0];
-          int menorIndex = 0;
-          for(int i = 1; i < array.length; i++ ) {
-        	  if(array[i] < menor && array[i] > 0) {
+	private static int buscarIndexMenorNumero(int[] array, int index) {
+		  int menor = array[index];
+          int menorIndex = index;
+          for(int i = index; i < array.length; i++ ) {
+        	  if(array[i] < menor ) {
         		  menor = array[i];
         		  menorIndex = i;
+        		  break;
         	  }
           }
 		return menorIndex;
 	}
+	
+	 private static void trocarElementos(int[] array, int indiceA, int indiceB) {
+	        int temp = array[indiceA];
+	        array[indiceA] = array[indiceB];
+	        array[indiceB] = temp;
+	    }
 }
 
