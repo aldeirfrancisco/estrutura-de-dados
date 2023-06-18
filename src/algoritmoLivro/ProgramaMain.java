@@ -6,9 +6,9 @@ public class ProgramaMain {
 	   
 	   
 	   Recursao recur = new Recursao();
-	   recur.regressiva(10);	   
+	   //recur.regressiva(10);	   
 	   
-	   
+	  System.out.println(recur.fatorial(5));
 	   
 	   
 	   
