@@ -2,7 +2,7 @@ package estrutura_aula3_lista_ligada;
 
 import java.util.ArrayList;
 
-// parei na aula 7
+// parei na aula 8
 public class Camparacao {
 	public static void main(String[] args) {
 		   ListaLigada<Integer> lista = new ListaLigada<Integer>();
