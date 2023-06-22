@@ -13,15 +13,20 @@ public class Main {
 	  System.out.println("Qual número vc buscar?");
 	  Scanner leitor = new Scanner(System.in);
 	  int buscado = leitor.nextInt();
-	  
+	  boolean isEncontrou = false;
 	  for(int i=0; i < vetor.length; i++) {
 		  if(vetor[i] ==buscado) {
-		  System.out.println("achou !!! ");
-		  break;
-		  } else if(i ==vetor.length) {
-			  System.out.println("não existe!!! ");
-			  
+			  isEncontrou = true;
+		    break;
+		  } else  {
+			  isEncontrou = false;
 		  }
+	  }
+	  if(isEncontrou) {
+		  System.out.println("achou !!! ");
+	  } else  {
+		  System.out.println("não existe!!! ");
+		  
 	  }
 }
 }
