@@ -1,7 +1,7 @@
 package algoritmoLivro;
 
 public class Recursao {
-   //toda funcao recursiva tem duas parte o caso base e o caso recursivo, se não tiver vair cair no lup infinito.
+   //toda funcao recursiva tem duas parte o caso base e o caso recursivo, se não tiver vai cair no lup infinito.
   public void regressiva(int num) {
 	   System.out.println(num);
 	    if(num <=1) {   //caso base 
