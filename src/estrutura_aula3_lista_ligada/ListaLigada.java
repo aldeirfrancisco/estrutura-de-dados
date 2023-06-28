@@ -33,7 +33,17 @@ public class ListaLigada<TIPO> {
 	public void setTamanho(int tamanho) {
 		this.tamanho = tamanho;
 	}
-	
+	  public void adicionarComeco(String novoValor){
+	        Elemento novoElemento = new Elemento(novoValor);
+	        if (this.primeiro == null && this.ultimo == null){
+	            this.primeiro = novoElemento;
+	            this.ultimo = novoElemento;            
+	        }else{
+	            novoElemento.setProximo(this.primeiro);
+	            this.primeiro = novoElemento;
+	        }
+	        this.tamanho++;
+	    }
 	public void adicionar(TIPO novoValor) {
 		Elemento<TIPO> novoElemento = new Elemento<TIPO>(novoValor);
 		if(this.primeiro == null && this.ultimo == null) {
